@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/howler/dist/howler.min.js"></script>
+    <script src="node_modules/angular-youtube-embed/dist/angular-youtube-embed.min.js"></script>
+    <script src="node_modules/angular-video-bg/angular-video-bg.min.js"></script>
+    <script src="javascripts/webapp.module.js"></script>
+    <script src="javascripts/webapp.controller.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/tether/dist/css/tether.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
+    <title>webhorn</title>
+</head>
+
+<body ng-app="webApp" class="container-fluid">
+    <div ng-controller="WebController as player">
+        <div class="container-fluid maxheight">
+            <form ng-submit="player.submit(id)">
+                <div class="search-wrapper">
+                    <div class="input-holder">
+                        <input type="text" class="search-input" ng-model="id" placeholder="input Youtube video url" />
+                        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                    </div>
+                    <span class="close" onclick="searchToggle(this, event);"></span>
+                    <div class="result-container">
+                    </div>
+                </div>
+            </form>
+            <video-bg playlist="player.videos" allow-click-events="true"></video-bg>
+            <img class="btnimage center-block" ng-src="assets/images/hornbutton.png" ng-click="player.playhorn()" />
+            <table class="tableposition">
+                    <tr ng-repeat="img in player.images track by $index">
+                        <td>
+                          <img class="thumbnaillist" ng-src={{img.url}} ng-click="player.playvideo(img.videoId)" />
+                        </td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="node_modules/bootstrap-material-design/dist/js/ripples.min.js"></script>
+<script src="node_modules/bootstrap-material-design/dist/js/material.min.js"></script>
+<script>
+    $(function() {
+        $.material.init();
+    });
+</script>
+<script>
+    function searchToggle(obj, evt) {
+        var container = $(obj).closest('.search-wrapper');
+        if (!container.hasClass('active')) {
+            container.addClass('active');
+            evt.preventDefault();
+        } else if (container.hasClass('active') && $(obj).closest('.input-holder').length == 0) {
+            container.removeClass('active');
+            // clear input
+            container.find('.search-input').val('');
+        }
+    }
+</script>
+
+</html>
