@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('webApp', ['youtube-embed','angularVideoBg']);
+    .module('webApp', ['angularVideoBg']);
 })();

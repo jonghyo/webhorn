@@ -12,13 +12,25 @@ a {
     color: #00B7FF;
 }
 
-form{
-  margin-top: 5%;
+form {
+    margin-top: 5%;
 }
 
 .btnimage {
     cursor: pointer;
     top: 50%;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    -o-transition:all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.btnimage:active {
+    -webkit-transform: scale(0.65);
+    -moz-transform: scale(0.65);
+    -ms-transform: scale(0.65);
+    -o-transform: scale(0.65);
+    transform: scale(0.65);
 }
 
 .container-fluid {
@@ -31,14 +43,14 @@ form{
     height: 630px;
 }
 
-.tableposition{
-  top: -40%;
+.tableposition {
+    top: -40%;
 }
 
 .thumbnaillist {
-  width: 120px;
-  height: 90px;
-  cursor: pointer;
+    width: 120px;
+    height: 90px;
+    cursor: pointer;
 }
 
 .search-wrapper {

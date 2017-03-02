@@ -19,15 +19,13 @@
         };
 
         vm.videos = [{
-            videoId: '1dLXp0_1b6I',
-            mute: false
+            videoId: '1dLXp0_1b6I'
         }];
 
         vm.submit = function(url) {
             var id = url.split('=')[1];
             var newvideo = {
-                videoId: id,
-                mute: false
+                videoId: id
             };
             var imageurl = "http://i.ytimg.com/vi/" + id + "/default.jpg";
             var imageinfo = {
@@ -42,8 +40,7 @@
 
         vm.playvideo = function(id) {
             vm.videos[0] = {
-                videoId: id,
-                mute: false
+                videoId: id
             };
         };
     };
