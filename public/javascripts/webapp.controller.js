@@ -5,7 +5,7 @@
         .module('webApp')
         .controller('WebController', WebController);
 
-    function WebController($scope) {
+    function WebController($scope, $animate) {
         var vm = this;
         vm.images = [];
         vm.queue = [];

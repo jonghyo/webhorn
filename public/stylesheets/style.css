@@ -8,6 +8,32 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+/*video image fade in*/
+.animated.ng-enter,
+.animated.ng-leave,
+.animated.ng-move {
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+.animated.ng-enter {
+  opacity: 0;
+}
+.animated.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.animated.ng-leave {
+  opacity: 1;
+}
+.animated.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.animated.ng-move {
+  opacity: .5;
+}
+.animated.ng-move.ng-move-active {
+  opacity: 1;
+}
+
 a {
     color: #00B7FF;
 }
@@ -16,6 +42,7 @@ form {
     margin-top: 5%;
 }
 
+/*ボタンアニメーション*/
 .btnimage {
     cursor: pointer;
     top: 50%;

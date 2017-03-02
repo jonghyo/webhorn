@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('webApp', ['angularVideoBg']);
+    .module('webApp', ['angularVideoBg', 'ngAnimate']);
 })();

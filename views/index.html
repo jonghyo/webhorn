@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/howler/dist/howler.min.js"></script>
-    <script src="node_modules/angular-youtube-embed/dist/angular-youtube-embed.min.js"></script>
     <script src="node_modules/angular-video-bg/angular-video-bg.min.js"></script>
     <script src="javascripts/webapp.module.js"></script>
     <script src="javascripts/webapp.controller.js"></script>
@@ -41,7 +41,7 @@
             <video-bg playlist="player.videos" allow-click-events="true" mute="false"></video-bg>
             <img class="btnimage center-block" ng-src="assets/images/hornbutton.png" ng-click="player.playhorn()" />
             <table class="tableposition">
-                    <tr ng-repeat="img in player.images track by $index">
+                    <tr ng-repeat="img in player.images track by $index" class="animated">
                         <td>
                           <img class="thumbnaillist" ng-src={{img.url}} ng-click="player.playvideo(img.videoId)" />
                         </td>
